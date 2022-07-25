@@ -18,8 +18,12 @@ function MarketPlace() {
     (async function () {
       const result = await getAllProducts(PageNum);
       const NextResult = await getAllProducts(PageNum + 1);
-      NextResult.data.length ? setNextPageFlag(false) : setNextPageFlag(true)
+      
       setProducts(result.data);
+      console.log(result.data);
+
+
+      NextResult.data.length ? setNextPageFlag(false) : setNextPageFlag(true);
     })();
   }, [PageNum]);
 

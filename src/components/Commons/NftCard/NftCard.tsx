@@ -4,7 +4,9 @@ import styled from "styled-components";
 import { NftCardType } from "../../../types/product";
 import SoldOutImage from "../../../assets/images/soldout.png";
 import EthereumLogo from "../../../assets/images/ethereum_logo.png";
+
 const NftCard = (props: NftCardType) => {
+
   const [ImgSrc, setImgSrc] = useState<string | null>();
   const [Price, setPrice] = useState("");
 

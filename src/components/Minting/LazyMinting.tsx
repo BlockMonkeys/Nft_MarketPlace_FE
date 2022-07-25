@@ -109,6 +109,10 @@ const LazyMinting = () => {
       setLoadingFlag(false);
     };
 
+    console.log(voucher);
+
+    console.log(signature)
+
     setLoadingFlag(false);
     navigator("/");
   }

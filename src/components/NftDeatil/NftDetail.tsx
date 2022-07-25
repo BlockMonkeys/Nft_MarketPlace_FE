@@ -32,6 +32,18 @@ const NftDetail = () => {
     })();
   }, []);
 
+  // @ GET Image URL FROM IPFS;
+  useEffect(() => {
+    if (Nft?.ipfsUrl) {
+      (async function () {
+        const res = await fetch(Nft.ipfsUrl);
+        const resJSON = await res.json();
+        const imgSrc = await resJSON.image.split("ipfs://");
+        setImgSrc(`https://ipfs.io/ipfs/${imgSrc[1]}`);
+      })();
+      }
+  }, [Nft]);
+
   // @ Buy NFT (Tx to RedeemNFT Function);
   const handleBuy = async () => {
     setLoadingFlag(true);
@@ -122,21 +134,11 @@ const NftDetail = () => {
       }
       
       setLoadingFlag(false);
-      alert("구매완료");
+      navi("/marketplace");
     }
   };
 
-  // @ GET Image URL FROM IPFS;
-  useEffect(() => {
-    if (Nft?.ipfsUrl) {
-      (async function () {
-        const res = await fetch(Nft.ipfsUrl);
-        const resJSON = await res.json();
-        const imgSrc = await resJSON.image.split("ipfs://");
-        setImgSrc(`https://ipfs.io/ipfs/${imgSrc[1]}`);
-      })();
-    }
-  }, [Nft]);
+
 
   return (
     <div className="container">

@@ -84,7 +84,7 @@ const Header = () => {
           <button onClick={() => window.open("https://goerlifaucet.com/", "_blank")}>Faucet</button>
         </div>
         <div>
-          <button onClick={() => window.open("https://goerli.etherscan.io/address/0x86D05fEE65731B7Ba1b8e4EfDD62Ba34F35508AF", "_blank")}>Contract</button>
+          <button onClick={() => window.open("https://goerli.etherscan.io/address/0x5a5eb29B037fA4b56D121e2E73D642d544B5Dce6#code", "_blank")}>Contract</button>
         </div>
       </HeaderCategory>
 
